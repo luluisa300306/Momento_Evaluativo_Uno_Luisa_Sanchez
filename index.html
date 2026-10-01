@@ -11,95 +11,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oleo+Script:wght@400;700&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Sora:wght@100..800&family=Syne:wght@400..800&family=Tenor+Sans&display=swap" rel="stylesheet">
 
 
-<link rel="stylesheet" href="https://jsdelivr.net">
-<link rel="stylesheet" href="https://jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+<link rel="stylesheet" href="style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
 <script>
   const { animate } = anime;
 </script>
 
-<style>
-    :root {
-
-        --verde-principal: #1E3F20;
-        --verde-acento: #4A7C59;
-        --crema-fondo: #F4F1EA;
-        --blanco: #FFFFFF;
-
-        --texto-oscuro: #222222;
-        --texto-suave: #555555;
-        --madera-acento: #8C6D53;
-
-    }
-
-    body {
-        font-family: 'Sora', sans-serif;
-        background-color: var(--crema-fondo);
-        color: var(--texto-oscuro);
-        margin: 0;
-        padding: 0;
-    }
-
-    h1, h2, h3, h4, .font-titulo {
-        font-family: 'Fraunces', serif;
-        color: var(--verde-principal);
-    }
-
-    a {
-        color: var(--texto-oscuro);
-        text-decoration: none;
-    }
-
-    .btn-cta {
-        background-color: var(--verde-principal);
-        color: var(--blanco);
-        font-family: 'Sora', sans-serif;
-        font-weight: 600;
-        border-radius: 6px;
-    }
-
-</style>
 </head>
 <body>
     
-    <header>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#inicio" class="brand logo-animado">Casa Nativa</a>
 
-        <div class="pure-g">
-
-            <div class="pure-u-1 pure-u-md-1-3">
-
-                <a href="#inicio">
-                    <h2>Casa Nativa</h2>
-                </a>
-            </div>
-
-        </div>
-
-        <div>
-
-            <nav>
-
-                <ul>
-
-                    <li><a href="#experiencia">Experiencia</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#reserva">Reserva</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-
-                    <a href="#reserva">Reservar Ahora</a>
-
+            <nav class="pure-menu" aria-label="Navegación principal">
+                <ul class="pure-menu-list menu-responsive">
+                    <li class="pure-menu-item">
+                        <a href="#experiencia" class="pure-menu-link">Experiencia</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="#servicios" class="pure-menu-link">Servicios</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="#reserva" class="pure-menu-link">Reserva</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="#contacto" class="pure-menu-link">Contacto</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="#reserva" class="pure-menu-link nav-cta cta-animado">Reservar Ahora</a>
+                    </li>
                 </ul>
-
             </nav>
-            
         </div>
-
     </header>
 
     <main>
        
-        <section id="incio">
+        <section id="inicio">
 
             <div>
 
@@ -139,7 +91,7 @@
 
                 <div>
 
-                    <article>
+                    <article id="experiencia">
 
                         <h3>Habitación privada</h3>
                         <p>Espacios cómodos,ilmindados y preparados para descansar.</p>
@@ -267,7 +219,7 @@
 
             </div>
 
-            <div>
+            <div id="contacto">
 
                 <h4>Contacto y Ubicación</h4>
                 <p>Teléfono: +57 300 555 0180</p>
@@ -295,6 +247,24 @@
         </div>
 
     </footer>
+
+    <script>
+    animate('.logo-animado', {
+        opacity: [0, 1],
+        x: [-20, 0],
+        duretion: 700,
+        ease: 'outQuad'
+    });
+
+    animate('.cta-animado', {
+        opacity: [0, 1],
+        y: [12, 0],
+        duration: 600,
+        delay: 180,
+        ease: 'outQuad'
+    });
+
+</script>
 
 </body>
 </html>
