@@ -24,11 +24,19 @@
 <body>
     
     <header class="site-header">
-        <div class="header-inner">
-            <a href="#inicio" class="brand logo-animado">Casa Nativa</a>
+        <div class="header-inner pure-g">
+            <a href="#inicio" class="brand pure-u-3-4 pure-u-md-1-4 logo-animado">Casa Nativa</a>
 
-            <nav class="pure-menu" aria-label="Navegación principal">
+            <button class="menu-toggle pure-u-1-4" type="button" aria-expanded="false" aria-controls="menu-principal" arua-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav id= "menu-principal" class="pure-menu pure-menu-horizontal pure-u-1 pure-u-md-3-4" aria-label="Navegación principal">
                 <ul class="pure-menu-list menu-responsive">
+
+                    <li class="pure-menu-item">
+                        <a href="#inicio" class="pure-menu-link">Inicio</a>
+                    </li>
                     <li class="pure-menu-item">
                         <a href="#experiencia" class="pure-menu-link">Experiencia</a>
                     </li>
@@ -247,6 +255,32 @@
         </div>
 
     </footer>
+
+    <script>
+        const enlaces = document.querySelectorAll(
+            '.site-header .pure-menu-link:not(.nav-cta)'
+            );
+
+        enlaces.forEach((enlace) => {
+            enlace.addEventListener('mouseenter', () => {
+                animate(enlace, { y: -2, duration: 160 });
+            });
+
+            enlace.addEventListener('mouseleave', () => {
+                animate(enlace, { y: 0, duration: 160 });
+            });
+            });
+
+        const reservar = document.querySelector('.cta-animado');
+
+        reservar.addEventListener('mouseenter', () => {
+            animate(reservar, { scale: 1.04, duration: 160 });
+            });
+
+        reservar.addEventListener('mouseleave', () => {
+            animate(reservar, { scale: 1, duration: 160 });
+            });
+</script>
 
     <script>
     animate('.logo-animado', {
