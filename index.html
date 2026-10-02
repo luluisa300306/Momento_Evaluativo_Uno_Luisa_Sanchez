@@ -7,8 +7,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oleo+Script:wght@400;700&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Syne:wght@400..800&family=Tenor+Sans&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oleo+Script:wght@400;700&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Sora:wght@100..800&family=Syne:wght@400..800&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
@@ -25,14 +24,16 @@
     
     <header class="encabezado">
         <div class="encabezado-contenedor pure-g">
-            <a href="#inicio" class="encabezado-marca pure-u-3-4 pure-u-md-1-4 logo-animado">Casa Nativa</a>
+            <a href="#inicio" class="encabezado-marca pure-u-3-4 pure-u-md-1-4">Casa Nativa</a>
 
             <button class="boton-menu pure-u-1-4" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
-                <span></span><span></span><span></span>
+                <span class="linea-hamburguesa linea-superior"></span>
+                <span class="linea-hamburguesa linea-central"></span>
+                <span class="linea-hamburguesa linea-inferior"></span>
             </button>
 
             <nav id= "menu-principal" class="pure-menu pure-menu-horizontal pure-u-1 pure-u-md-3-4" aria-label="Navegación principal">
-                <ul class="pure-menu-list menu-enlaces">
+                <ul class="pure-menu-list">
 
                     <li class="pure-menu-item">
                         <a href="#inicio" class="pure-menu-link">Inicio</a>
@@ -59,7 +60,7 @@
 
     <main>
        
-        <section id="inicio" class="hero">
+        <section id="inicio" class="inicio-seccion">
             <div class="inicio-contenedor pure-g">
                 <div class="inicio-contenido pure-u-1 pure-u-md-1-2">
                     <span class="inicio-etiqueta">Escápate de la rutina</span>
@@ -68,7 +69,7 @@
                 
 
                     <div class="inicio-acciones">
-                        <a href="#contacto" class="pure-button pure-button-primary boton-disponibilidad boton-inicio-animado">
+                        <a href="#reserva" class="pure-button pure-button-primary boton-disponibilidad boton-inicio-animado">
                             Consultar disponibilidad
                         </a>
                         <a href="#experiencia" class="pure-button boton-experiencia boton-inicio-animado">
@@ -95,7 +96,7 @@
                     <article class="tarjeta-servicio tarjeta-animada pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
                         <h3>Habitación privada</h3>
-                        <p>Espacios cómodos,ilmindados y preparados para descansar.</p>
+                        <p>Espacios cómodos,ilumindados y preparados para descansar.</p>
 
                     </article>
 
@@ -226,7 +227,21 @@
             menuAbierto ? 'Abrir menú' : 'Cerrar menú'
             );
             menuPrincipal.classList.toggle('is-open', !menuAbierto);
+
+            if (menuAbierto) {
+                animate(lineaSuperior, { y: 0, rotate: 0, duration: 220, ease: 'out(3)' });
+                animate(lineaCentral, { opacity: 1, duration: 160 });
+                animate(lineaInferior, { y: 0, rotate: 0, duration: 220, ease: 'out(3)' });
+                } else {
+                animate(lineaSuperior, { y: 6, rotate: 45, duration: 220, ease: 'out(3)' });
+                animate(lineaCentral, { opacity: 0, duration: 160 });
+                animate(lineaInferior, { y: -6, rotate: -45, duration: 220, ease: 'out(3)' });
+                }
         });
+
+        const lineaSuperior = botonMenu.querySelector('.linea-superior');
+        const lineaCentral = botonMenu.querySelector('.linea-central');
+        const lineaInferior = botonMenu.querySelector('.linea-inferior');
 
         const enlaces = document.querySelectorAll(
             '.encabezado .pure-menu-link:not(.boton-reserva)'
@@ -312,11 +327,5 @@
         });
      
 </script>
-
-<script>
-    
-
-</script>
-
 </body>
 </html>

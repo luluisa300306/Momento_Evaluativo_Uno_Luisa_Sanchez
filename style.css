@@ -8,7 +8,6 @@
 
         --texto-oscuro: #222222;
         --texto-suave: #555555;
-        --madera-acento: #8C6D53;
 
         --fuente-cuerpo: 'Sora', sans-serif;
         --fuente-titulo: 'Fraunces', serif;
@@ -66,7 +65,6 @@ h1, h2, h3, h4 {
     font-family: var(--fuente-titulo);
     font-size: var(--tamaño-logo);
     font-weight: 700;
-    text-decoration: none;
 }
 
 .encabezado .pure-menu {
@@ -201,7 +199,7 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 47.99em) {
-    .hero {
+    .inicio-seccion {
         padding: var(--espaciado-5) var(--espaciado-2);
     }
 
@@ -237,7 +235,8 @@ h1, h2, h3, h4 {
     padding: var(--espaciado-5);
     margin-bottom: var(--espaciado-4);
     background-color: var(--blanco);
-    border: var(--radio-tarjeta);
+    border: var(--borde-fino);
+    border-radius: var(--radio-tarjeta);
     box-shadow: var(--sombra-suave);
 }
 
@@ -291,7 +290,7 @@ h1, h2, h3, h4 {
     font-weight: 600;
 }
 
-.campo-reserva input, .campo-reserva-select, .campo-reserva textarea {
+.campo-reserva input, .campo-reserva select, .campo-reserva textarea {
     width: 100%;
     border: var(--borde-fino);
     border-radius: var(--radio-tarjeta);
@@ -334,7 +333,7 @@ h1, h2, h3, h4 {
     padding: var(--espaciado-4);
 }
 
-.pie-columna h3, h4 {
+.pie-columna h3, .pie-columna h4 {
     margin-bottom: var(--espaciado-3);
     color: var(--blanco);
 }
@@ -345,7 +344,6 @@ h1, h2, h3, h4 {
 }
 .pie-columna a {
     display: inline-block;
-    text-decoration: none;
 }
 
 .pie-columna a:hover {
@@ -365,9 +363,6 @@ h1, h2, h3, h4 {
     padding: var(--espaciado-4);
     border-top: var(--borde-fino);
     text-align: center;
-}
-
-.pie-copyright {
     color: var(--crema-fondo);
 }
 
