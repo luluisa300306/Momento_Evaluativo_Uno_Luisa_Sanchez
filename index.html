@@ -23,16 +23,16 @@
 </head>
 <body>
     
-    <header class="site-header">
-        <div class="header-inner pure-g">
-            <a href="#inicio" class="brand pure-u-3-4 pure-u-md-1-4 logo-animado">Casa Nativa</a>
+    <header class="encabezado">
+        <div class="encabezado-contenedor pure-g">
+            <a href="#inicio" class="encabezado-marca pure-u-3-4 pure-u-md-1-4 logo-animado">Casa Nativa</a>
 
-            <button class="menu-toggle pure-u-1-4" type="button" aria-expanded="false" aria-controls="menu-principal" arua-label="Abrir menú">
+            <button class="boton-menu pure-u-1-4" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
                 <span></span><span></span><span></span>
             </button>
 
             <nav id= "menu-principal" class="pure-menu pure-menu-horizontal pure-u-1 pure-u-md-3-4" aria-label="Navegación principal">
-                <ul class="pure-menu-list menu-responsive">
+                <ul class="pure-menu-list menu-enlaces">
 
                     <li class="pure-menu-item">
                         <a href="#inicio" class="pure-menu-link">Inicio</a>
@@ -50,7 +50,7 @@
                         <a href="#contacto" class="pure-menu-link">Contacto</a>
                     </li>
                     <li class="pure-menu-item">
-                        <a href="#reserva" class="pure-menu-link nav-cta cta-animado">Reservar Ahora</a>
+                        <a href="#reserva" class="pure-menu-link boton-reserva reserva-animada">Reservar Ahora</a>
                     </li>
                 </ul>
             </nav>
@@ -59,31 +59,28 @@
 
     <main>
        
-        <section id="inicio">
+        <section id="inicio" class="hero">
+            <div class="inicio-contenedor pure-g">
+                <div class="inicio-contenido pure-u-1 pure-u-md-1-2">
+                    <span class="inicio-etiqueta">Escápate de la rutina</span>
+                    <h1 class="inicio-titulo">Respira naturaleza. Descansa como en casa</h1>
+                    <p class="inicio-descripcion">Casa Nativa es un refugio rural pensado para desconectarte del ruido, disfrutar el paisaje y vivir una experiencia tranquila a pocos minutos de la ciudad.</p>
+                
 
-            <div>
-
-                <div>
-
-                    <div>
-                        <span>Escápate de la rutina</span>
-                        <h1>Respira naturaleza. Descansa como en casa</h1>
-                        <p>Casa Nativa es un refugio rural pensado para desconectarte del ruido, disfrutar el paisaje y vivir una experiencia tranquila a pocos minutos de la ciudad.</p>
+                    <div class="inicio-acciones">
+                        <a href="#contacto" class="pure-button pure-button-primary boton-disponibilidad boton-inicio-animado">
+                            Consultar disponibilidad
+                        </a>
+                        <a href="#experiencia" class="pure-button boton-experiencia boton-inicio-animado">
+                            Conocer la experiencia
+                        </a>
                     </div>
-
-                    <div>
-                        <a href="#contacto">Consultar disponibilidad</a>
-                        <a href="#experiencia">Conocer la experiencia</a>
-                    </div>
-
                 </div>
-
-                <div>
-                    <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80" alt="Refugio rural Casa Nativa rodeado de naturaleza">
+                
+                <div class="inicio-fotografia pure-u-1 pure-u-md-1-2">
+                    <img class="pure-img imagen-inicio-animada" src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80" alt="Refugio rural Casa Nativa rodeado de naturaleza">
                 </div>
-
             </div>
-
         </section>
 
         <section id="servicios">
@@ -257,46 +254,81 @@
     </footer>
 
     <script>
-        const enlaces = document.querySelectorAll(
-            '.site-header .pure-menu-link:not(.nav-cta)'
-            );
-
-        enlaces.forEach((enlace) => {
-            enlace.addEventListener('mouseenter', () => {
-                animate(enlace, { y: -2, duration: 160 });
-            });
-
-            enlace.addEventListener('mouseleave', () => {
-                animate(enlace, { y: 0, duration: 160 });
-            });
-            });
-
-        const reservar = document.querySelector('.cta-animado');
-
-        reservar.addEventListener('mouseenter', () => {
-            animate(reservar, { scale: 1.04, duration: 160 });
-            });
-
-        reservar.addEventListener('mouseleave', () => {
-            animate(reservar, { scale: 1, duration: 160 });
-            });
-</script>
+        
+    </script>
 
     <script>
-    animate('.logo-animado', {
-        opacity: [0, 1],
-        x: [-20, 0],
-        duretion: 700,
-        ease: 'outQuad'
-    });
+        const botonMenu = document.querySelector('.boton-menu');
+        const menuPrincipal = document.querySelector('#menu-principal');
 
-    animate('.cta-animado', {
-        opacity: [0, 1],
-        y: [12, 0],
-        duration: 600,
-        delay: 180,
-        ease: 'outQuad'
-    });
+        botonMenu.addEventListener('click', () => {
+            const menuAbierto = botonMenu.getAttribute('aria-expanded') === 'true';
+
+            botonMenu.setAttribute('aria-expanded', String(!menuAbierto));
+            botonMenu.setAttribute(
+            'aria-label',
+            menuAbierto ? 'Abrir menú' : 'Cerrar menú'
+            );
+            menuPrincipal.classList.toggle('is-open', !menuAbierto);
+        });
+
+        const enlaces = document.querySelectorAll(
+            '.encabezado .pure-menu-link:not(.boton-reserva)'
+            );
+        
+        const reservar = document.querySelector('.reserva-animada');
+
+        reservar.addEventListener('mouseenter', () => {
+            animate(reservar, {
+                backgroundColor: '#4A7C59',
+                rotateY: '8deg',
+                scale: 1.04,
+                duration: 300,
+                ease: 'out(3)'
+            });
+        });
+
+        reservar.addEventListener('mouseleave', () => {
+        animate(reservar, {
+            backgroundColor: '#1E3F20',
+            rotateY: '0deg',
+            scale: 1,
+            duration: 300,
+            ease: 'out(3)'
+        });
+        });
+
+        animate('.reserva-animada', {
+            y: [12, 0],
+            duration: 600,
+            delay: 180,
+            ease: 'outQuad'
+        });
+
+        document.querySelectorAll('.boton-inicio-animado').forEach((boton) => {
+            boton.addEventListener('mouseenter', () => {
+            animate(boton, { y: -3, scale: 1.04, duration: 180, ease: 'out(3)' });
+        });
+
+        boton.addEventListener('mouseleave', () => {
+            animate(boton, { y: 0, scale: 1, duration: 180, ease: 'out(3)' });
+            });
+        });
+
+        const imagenInicio = document.querySelector('.imagen-inicio-animada');
+
+        imagenInicio.addEventListener('mouseenter', () => {
+            animate(imagenInicio, { scale: 1.04, duration: 450, ease: 'out(3)' });
+        });
+
+        imagenInicio.addEventListener('mouseleave', () => {
+            animate(imagenInicio, { scale: 1, duration: 450, ease: 'out(3)' });
+        });
+     
+</script>
+
+<script>
+    
 
 </script>
 
