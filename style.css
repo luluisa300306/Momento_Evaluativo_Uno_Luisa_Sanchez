@@ -255,3 +255,67 @@ h1, h2, h3, h4 {
     }
 }
 
+.reserva-seccion {
+    padding: var(--espaciado-7) var(--espaciado-6);
+}
+
+.reserva-contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.reserva-introduccion {
+    margin-bottom: var(--espaciado-5);
+}
+
+.reserva-introduccion h2 {
+    margin-bottom: var(--espaciado-3);
+    font-size: var(--tamaño-titulo);
+}
+
+.reserva-introduccion p {
+    max-width: 42rem;
+    color: var(--texto-suave);
+}
+
+.formulario-reserva {
+    padding: var(--espaciado-4);
+}
+
+.campo-reserva {
+    padding: 0 var(--espaciado-3) var(--espaciado-4);
+}
+
+.campo-reserva label {
+    margin-bottom: var(--espaciado-2);
+    font-weight: 600;
+}
+
+.campo-reserva input, .campo-reserva-select, .campo-reserva textarea {
+    width: 100%;
+    border: var(--borde-fino);
+    border-radius: var(--radio-tarjeta);
+}
+
+.formulario-reserva .pure-button-primary {
+    padding: var(--espaciado-3) var(--espaciado-5);
+    color: var(--blanco);
+    background-color: var(--verde-principal);
+    border-radius: var(--radio-tarjeta);
+}
+
+.formulario-reserva .pure-button-primary:hover {
+    color: var(--blanco);
+    background-color: var(--verde-acento);
+}
+
+@media (max-width: 47.99em) {
+    .reserva-seccion {
+        padding: var(--espaciado-6) var(--espaciado-3);
+    }
+
+    .formulario-reserva {
+        padding: var(--espaciado-2);
+    }
+}
+

@@ -126,87 +126,60 @@
 
         </section>
 
-        <section id="reserva">
-
-            <div>
-
-                <div>
-
+        <section id="reserva" class="reserva-seccion">
+            <div class="reserva-contenedor">
+                <div class="reserva-introduccion">
                     <h2>Planea tu próxima escapada</h2>
                     <p>Cuéntanos cuándo quieres visitarnos y nos pondremos en contacto contigo para confirmar disponibilidad.</p>
-
                 </div>
 
-                <form action="#" method="post">
-
-                    <div>
-
+                <form action="#" method="post" class="pure-form pure-form-stacked pure-g formulario-reserva">
+                    <div class="campo-reserva pure-u-1 pure-u-md-1-2">
                         <label for="nombre">Nombre completo</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
-
                     </div>
 
-                    <div>
-
+                    <div class="campo-reserva pure-u-1 pure-u-md-1-2">
                         <label for="email">Correo electrónico</label>
                         <input type="email" id="email" name="email" placeholder="tu@mail.com" required>
-
                     </div>
 
-                    <div>
-
+                    <div class="campo-reserva pure-u-1 pure-u-md-1-2">
                         <label for="telefono">Teléfono</label>
                         <input type="tel" id="telefono" name="telefono" placeholder="Número de contacto" required>
-
                     </div>
 
-                    <div>
-
+                    <div class="campo-reserva pure-u-1 pure-u-md-1-2">
                         <label for="llegada">Fecha de llegada</label>
                         <input type="date" id="llegada" name="llegada" required>
-
                     </div>
 
-                    <div>
-
+                    <div class="campo-reserva pure-u-1 pure-u-md-1-2">
                         <label for="salida">Fecha de salida</label>
                         <input type="date" id="salida" name="salida" required>
-
                     </div>
 
-                    <div>
-
+                    <div class="campo-reserva pure-u-1 pure-u-md-1-2">
                         <label for="huespedes">Número de huéspedes</label>
-                        <select name="huespedes" id="huespedes">
-
+                        <select name="huespedes" id="huespedes" required>
                             <option value="1">1 Huésped</option>
                             <option value="2">2 Huéspedes</option>
                             <option value="3">3 Huéspedes</option>
                             <option value="4">4 o más Huéspedes</option>
-
                         </select>
-
                     </div>
 
-                    <div>
-
+                    <div class="campo-reserva pure-u-1">
                         <label for="mensaje">Mensaje o solicitud especial</label>
                         <textarea name="mensaje" id="mensaje" rows="4" placeholder="¿Algún requerimiento especial?" required></textarea>
-
                     </div>
 
-                    <div>
-
-                        <button type="submit" id="btn-enviar-solicitud">Enviar solicitud</button>
-
+                    <div class="campo-reserva pure-u-1">
+                        <button class="pure-button pure-button-primary"  type="submit" id="btn-enviar-solicitud">Enviar solicitud</button>
                     </div>
-
                 </form>
-
             </div>
-
         </section>
-
     </main>
 
     <footer>
