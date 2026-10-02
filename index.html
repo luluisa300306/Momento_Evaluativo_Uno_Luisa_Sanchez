@@ -83,41 +83,37 @@
             </div>
         </section>
 
-        <section id="servicios">
-
-            <div>
-
-                <div>
-
+        <section id="servicios" class="servicios-seccion">
+            <div class="servicios-contenedor">
+                <div class="servicios-introduccion">
                     <h2>Todo lo necesario para una estadía especial</h2>
                     <p>Diseñamos cada detalle para que disfrutes una experiencia cómoda, tranquila y cercana a la naturaleza.</p>
-
                 </div>
 
-                <div>
+                <div class="lista-servicios pure-g">
 
-                    <article id="experiencia">
+                    <article class="tarjeta-servicio tarjeta-animada pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
                         <h3>Habitación privada</h3>
                         <p>Espacios cómodos,ilmindados y preparados para descansar.</p>
 
                     </article>
 
-                    <article>
+                    <article class="tarjeta-servicio tarjeta-animada pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
                         <h3>Desayuno local</h3>
                         <p>Comienza el día con sabores frescos y productos de la región.</p>
                         
                     </article>
 
-                    <article>
+                    <article class="tarjeta-servicio tarjeta-animada pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
                         <h3>Zonas de descanso</h3>
                         <p>Jardines y espacios tranquilos para leer, conversar o simplemente desconectarte.</p>
                         
                     </article>
 
-                    <article>
+                    <article id="experiencia" class="tarjeta-servicio tarjeta-animada pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
                         <h3>Experiencias</h3>
                         <p>Recomendaciones de rutas, miradores y actividades cercanas.</p>
@@ -323,6 +319,26 @@
 
         imagenInicio.addEventListener('mouseleave', () => {
             animate(imagenInicio, { scale: 1, duration: 450, ease: 'out(3)' });
+        });
+
+        document.querySelectorAll('.tarjeta-animada').forEach((tarjeta) => {
+            tarjeta.addEventListener('mouseenter', () => {
+                animate(tarjeta, {
+                y: -6,
+                scale: 1.02,
+                duration: 220,
+                ease: 'out(3)'
+                });
+            });
+
+            tarjeta.addEventListener('mouseleave', () => {
+                animate(tarjeta, {
+                y: 0,
+                scale: 1,
+                duration: 220,
+                ease: 'out(3)'
+                });
+            });
         });
      
 </script>
